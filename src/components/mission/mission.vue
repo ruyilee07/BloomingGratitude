@@ -24,26 +24,28 @@ onMounted(() => {
         <n-flex class="block1" :align="'center'">
             <n-grid class="block1__inner">
                 <n-gi :span="12">
-                    <div class="slogan"><b>I REALLY HATE<br /> WAITING AT <span style="color: red">RED</span>
-                            LIGHT</b></div>
+                    <div class="slogan">
+                        <b>{{ "Rediscover our life's".toUpperCase() }}
+                            <span style="color: var(--primary-color)">MEANING</span>
+                            {{ "through daily gratitude".toUpperCase() }}
+                        </b>
+                    </div>
                 </n-gi>
                 <n-gi :span="10" :offset="2">
                     <h2>Why did I make this?</h2>
-                    <p>It all started with a frustrating experience in my hometown of Xiamen. There is a traffic light
-                        near my building, where the pedestrian green light lasts much shorter than the red light, and
-                        there is no clear indication of the remaining seconds. </p>
-                    <p>This created several problems for me:
-                        when I was some distance away from the light, I often didn’t know whether I should rush to catch
-                        the green light or wait it out. Additionally, the long waiting time during the red light would
-                        waste valuable minutes, leaving me feeling irritated and frustrated.</p>
-                    <p>
-                        These everyday issues inspired me to create <b>GreenLight
-                            Go</b>, a tool that helps predict whether you
-                        can make the next green light, saving time and reducing unnecessary stress.</p>
+                    <p>In our hectic, modern lives, it’s all too easy to be overwhelmed by stress, negativity, and the
+                        constant demands of the world around us. Many people find themselves caught in a cycle of
+                        rushing from one obligation to the next, often losing sight of the deeper reasons behind their
+                        existence. This barrage of everyday pressures can obscure the beauty and meaning in our lives,
+                        leaving us feeling disconnected and unfulfilled.</p>
+                    <p>I created Blooming Gratitude because I have experienced firsthand the transformative power of
+                        daily thankfulness. Every day, I find solace and inspiration in recognizing even the smallest
+                        blessings, and it’s this practice that has helped me shift my perspective in times of challenge.
+                        I believe that when we consciously acknowledge what we’re grateful for, we open ourselves to a
+                        richer, more fulfilling life.</p>
                     <h2>Mission</h2>
-                    <p>My mission is simple: to reduce waiting time at traffic lights and make your journey more
-                        efficient. I aim to leverage technology to make city traffic smarter and more convenient for
-                        everyone.</p>
+                    <p>My mission is to empower people to embrace gratitude every day, transforming even the smallest
+                        moments into powerful reminders of joy and purpose.</p>
                     <n-button style="margin-top: 12px" type="primary" round @click="scrollToBottom(block2)">
                         Scroll Down
                     </n-button>
@@ -55,8 +57,16 @@ onMounted(() => {
                 <n-grid class="block2__inner" :y-gap="256">
                     <n-gi :span="12">
                         <h1>Design Details</h1>
-                        <p>The app’s design process focuses on seamless user experience and integration with existing
-                            infrastructure. QR codes are placed on existing traffic lights for users to scan.</p>
+                        <p>Blooming Gratitude is more than just a simple note-taking app; it’s a visually engaging
+                            platform that transforms your moments of thankfulness into a flourishing digital garden.
+                            Here’s a closer look at how it works:</p>
+                        <h2>Plant Creation with AI</h2>
+                        <p>Whenever you write down something you’re grateful for, you’re prompted to choose a plant. You
+                            can define its <b>type</b>, <b>color</b>, and <b>artistic style</b>, ensuring each entry
+                            becomes a personal,
+                            creative expression. Once you tap the “Plant” button, the app uses AI to generate a unique
+                            image of your chosen plant—instantly turning your gratitude into a vibrant, shareable
+                            illustration.</p>
                         <n-button style="margin-top: 12px" type="primary" secondary round
                             @click="scrollToBottom(block3)">
                             <n-icon>
@@ -71,8 +81,7 @@ onMounted(() => {
                     <n-gi :span="12">
                         <n-flex :justify="'center'">
                             <n-flex vertical>
-                                <n-image style="border-radius: 12px" :width="240"
-                                    src="./tutorial/mission/WechatIMG5.webp" preview-disabled></n-image>
+                                <n-image :width="240" src="./BloomingGratitude/mission/Design-1.webp"></n-image>
                                 <n-flex :justify="'center'">
                                     <n-text :depth="3"></n-text>
                                 </n-flex>
@@ -88,16 +97,17 @@ onMounted(() => {
                     <n-gi class="showdetail" :span="12">
                         <n-flex :justify="'center'">
                             <n-flex vertical>
-                                <n-image style="border-radius: 12px" :width="240"
-                                    src="./tutorial/mission/redlight.webp" preview-disabled></n-image>
+                                <n-image :width="240" src="./BloomingGratitude/mission/Design-2.webp"></n-image>
                             </n-flex>
                         </n-flex>
                     </n-gi>
                     <n-gi :span="12">
-                        <h1>Red light: </h1>
-                        <p>The app displays the remaining time for the red light in real time. Below this,
-                            there’s a "hurry up" button, which users can press to show their impatience. The app tracks
-                            how many people press this button and reports the data to the local traffic authority.</p>
+                        <h2>Growing Your Collection</h2>
+                        <p>Each time you record a new moment of gratitude, you “plant” a new digital flower or foliage.
+                            Over time, your gratitude grows into an ever-expanding collection of plants. This not only
+                            motivates you to reflect on the positive aspects of your life regularly but also creates a
+                            sense of accomplishment and delight as your garden flourishes.
+                        </p>
                         <n-button style="margin-top: 12px" type="primary" secondary round
                             @click="scrollToBottom(block4)">
                             <n-icon>
@@ -115,18 +125,23 @@ onMounted(() => {
         <div ref="block4">
             <n-flex class="block4" :align="'center'">
                 <n-grid class="block4__inner" :y-gap="256">
+                    <n-gi :span="12">
+                        <h1>My Garden: Organized & Inspiring</h1>
+                        <p>In the <b>My Garden</b> page, Blooming Gratitude automatically organizes your plants
+                            according to
+                            their type and style. This classification system encourages users to explore and collect
+                            different varieties, colors, and art styles, turning the act of gratitude into a fun and
+                            fulfilling experience. As you watch your garden diversify, you’ll find new inspiration to
+                            continue nurturing positivity in your daily life.
+                        </p>
+                    </n-gi>
                     <n-gi class="showdetail" :span="12">
                         <n-flex :justify="'center'">
                             <n-flex vertical>
                                 <n-image style="border-radius: 12px" :width="240"
-                                    src="./tutorial/mission/greenlight.webp" preview-disabled></n-image>
+                                    src="./BloomingGratitude/mission/Design-3.webp" preview-disabled></n-image>
                             </n-flex>
                         </n-flex>
-                    </n-gi>
-                    <n-gi :span="12">
-                        <h1>Green light: </h1>
-                        <p>The app shows the countdown for the green light as well, giving users a clear
-                            indication of how much time they have before it turns red.</p>
                     </n-gi>
                 </n-grid>
             </n-flex>
@@ -177,14 +192,6 @@ onMounted(() => {
 
         .block4__inner {
             align-items: center;
-        }
-    }
-
-    .showdetail {
-        .n-image {
-            border: 2px solid black;
-            box-shadow: var(--boxShadow-deep);
-            border-radius: 20px;
         }
     }
 }

@@ -1,11 +1,4 @@
 <script setup>
-import { ref } from 'vue';
-
-const block2 = ref(null);
-
-const scrollToBottom = async (frame) => {
-    window.scrollTo({ top: frame.clientHeight, behavior: "smooth" });
-};
 </script>
 
 <template>
@@ -13,21 +6,24 @@ const scrollToBottom = async (frame) => {
         <n-flex class="block1" :align="'center'">
             <n-grid class="block1__inner">
                 <n-gi :span="8">
+                    <n-avatar :size="400" src="./BloomingGratitude/about/Avatar.jpg" />
                 </n-gi>
                 <n-gi :span="14" :offset="2">
+                    <div style="font-size: 96px"><b>Hello!</b></div>
+                    <n-p :depth="3" style="font-size: 18px">My name is Ruyi Li. I am eager to pursue an undergraduate
+                        degree in finance, driven by my curiosity about the world of economics and the dynamic nature of
+                        financial markets. Beyond excelling in class, I actively participate in and organize various
+                        events outside the classroom. These experiences have honed my leadership skills, teaching me the
+                        importance of initiative, teamwork, and community engagement.</n-p>
+                    <n-p :depth="3" style="font-size: 18px">If you'd like to know more about me, just click the button
+                        below to visit my personal website, where I share details about my learning journey and the
+                        projects I'm passionate about.</n-p>
+                    <n-button type="primary" round style="margin-top: 12px" @click="handleToAppPage">
+                        Go to my personal website
+                    </n-button>
                 </n-gi>
             </n-grid>
         </n-flex>
-        <div ref="block2">
-            <n-flex class="block2" :align="'center'">
-                <n-grid class="block2__inner">
-                    <n-gi :span="14">
-                    </n-gi>
-                    <n-gi :span="8" :offset="2">
-                    </n-gi>
-                </n-grid>
-            </n-flex>
-        </div>
     </div>
 </template>
 
@@ -42,19 +38,6 @@ const scrollToBottom = async (frame) => {
 
         .block1__inner {
             margin-top: -87px;
-            align-items: center;
-
-            .avatar {
-                border-radius: 12px;
-                box-shadow: var(--boxShadow-deep);
-            }
-        }
-    }
-
-    .block2 {
-        min-height: 100vh;
-
-        .block2__inner {
             align-items: center;
         }
     }

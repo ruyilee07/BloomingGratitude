@@ -10,10 +10,10 @@ store.state.display.isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobi
 
 const themeOverrides = {
   common: {
-    "primaryColor": "#000000",
-    "primaryColorHover": "#000000",
-    "primaryColorPressed": "#000000",
-    "primaryColorSuppl": "#000000",
+    "primaryColor": "#8CC084FF",
+    "primaryColorHover": "#9ED995FF",
+    "primaryColorPressed": "#79C66DFF",
+    "primaryColorSuppl": "#47953BFF",
   },
 };
 </script>

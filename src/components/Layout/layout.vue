@@ -11,26 +11,22 @@ const isApp = router.currentRoute.value.name.includes('app')
             <n-flex :align="'center'" :justify="'space-between'">
                 <n-flex :align="'center'" class="logo" @click="router.push({ name: 'home' })">
                     <n-avatar :width="24" style="border-radius: 8px;"
-                        src="./tutorial/logo/apple-touch-icon.png"></n-avatar>
+                        src="./BloomingGratitude/logo/apple-touch-icon.png"></n-avatar>
                     <b>
-                        Tutorial
-                        <span class="primaryColor">App</span>
+                        Blooming
+                        <span class="primaryColor">Gratitude</span>
                     </b>
                 </n-flex>
                 <n-flex :size="24">
-                    <!-- <n-button text @click="router.push({ name: 'mission' })">
+                    <n-button text @click="router.push({ name: 'mission' })">
                         Design Detail
                     </n-button>
                     <n-button text @click="router.push({ name: 'development' })">
                         Development History
-                    </n-button> -->
+                    </n-button>
                     <n-button text @click="router.push({ name: 'about' })">
                         About
                     </n-button>
-                    <!-- <n-button round style="box-shadow: var(--boxShadow-light);"
-                        @click="router.push({ name: 'support' })">
-                        Public Support
-                    </n-button> -->
                 </n-flex>
             </n-flex>
         </n-layout-header>
@@ -39,7 +35,7 @@ const isApp = router.currentRoute.value.name.includes('app')
         </n-layout-content>
         <n-layout-footer v-if="!isApp">
             <n-flex :justify="'right'">
-                <div>2024 Copyright © <span class="primaryColor">Magnet</span>. All rights reserved.</div>
+                <div>2025 Copyright © <span class="primaryColor">Ruyi Li</span>. All rights reserved.</div>
             </n-flex>
         </n-layout-footer>
     </n-layout>
