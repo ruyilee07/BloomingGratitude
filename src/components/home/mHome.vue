@@ -10,26 +10,24 @@ function handleToAppPage() {
 <template>
     <div class="content">
         <n-flex class="block1" :align="'center'">
-            <div style="margin-top: -87px">
-                <n-grid style="align-items: center;">
-                    <n-gi :span="12">
-                        <n-flex :justify="'center'">
-                            <n-image :width="240" src="./BloomingGratitude/home/Sample.webp" preview-disabled></n-image>
+            <div>
+                <div>
+                    <div>
+                        <n-flex>
+                            <n-image src="./BloomingGratitude/home/Sample.webp" preview-disabled></n-image>
                         </n-flex>
-                    </n-gi>
-                    <n-gi :span="12">
-                        <div>
+                    </div>
+                    <div>
+                        <div style="text-align: center;">
                             <div class="slogan">Plant the Seeds of Gratitude,<br />Watch Joy Bloom.</div>
                             <div class="subtitle">Transform your daily thankfulness into vibrant, personalized art.
                             </div>
-                        </div>
-                        <div>
                             <n-button type="primary" round class="startBtn" @click="handleToAppPage">
                                 Download Here
                             </n-button>
                         </div>
-                    </n-gi>
-                </n-grid>
+                    </div>
+                </div>
             </div>
         </n-flex>
     </div>
@@ -37,12 +35,14 @@ function handleToAppPage() {
 
 <style lang="less" scoped>
 .content {
-    width: 1200px;
-    margin: 0 auto;
     padding: 24px;
 
     .n-image {
         border-radius: 3px;
+
+        :deep(img) {
+            width: 100%;
+        }
     }
 
     .block1 {
@@ -52,6 +52,7 @@ function handleToAppPage() {
             font-size: 36px;
             font-weight: bold;
             line-height: 1.4;
+            margin-top: 48px;
         }
 
         .subtitle {
@@ -61,7 +62,7 @@ function handleToAppPage() {
         }
 
         .startBtn {
-            margin-top: 12px;
+            margin: 12px 0 48px 0;
         }
     }
 

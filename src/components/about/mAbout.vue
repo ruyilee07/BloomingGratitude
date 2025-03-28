@@ -4,11 +4,11 @@
 <template>
     <div class="content">
         <n-flex class="block1" :align="'center'">
-            <n-grid class="block1__inner">
-                <n-gi :span="8">
+            <div class="block1__inner">
+                <div>
                     <n-avatar :size="400" src="./BloomingGratitude/about/Avatar.jpg" />
-                </n-gi>
-                <n-gi :span="14" :offset="2">
+                </div>
+                <div>
                     <div style="font-size: 96px"><b>Hello!</b></div>
                     <n-p :depth="3" style="font-size: 18px">My name is Ruyi Li. I am eager to pursue an undergraduate
                         degree in finance, driven by my curiosity about the world of economics and the dynamic nature of
@@ -22,23 +22,20 @@
                         href="https://ruyili.hillcodex.com/#/">
                         Go to my personal website
                     </n-button>
-                </n-gi>
-            </n-grid>
+                </div>
+            </div>
         </n-flex>
     </div>
 </template>
 
 <style lang="less" scoped>
 .content {
-    width: 1200px;
-    margin: 0 auto;
     padding: 24px;
 
     .block1 {
         min-height: calc(100vh - 87px - 48px);
 
         .block1__inner {
-            margin-top: -87px;
             align-items: center;
         }
     }

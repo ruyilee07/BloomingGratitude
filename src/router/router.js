@@ -1,37 +1,31 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import store from "../store/store";
-import Layout from "../components/Layout/layout.vue"
-import mLayout from "../components/Layout/mLayout.vue"
-import home from "../components/home/home.vue"
-import mission from "../components/mission/mission.vue"
-import development from "../components/development/development.vue"
-import about from "../components/about/about.vue"
 
 const routes = [
     {
         path: "/",
         name: "app",
-        component: store.state.display.isMobile ? mLayout : Layout,
+        component: () => store.state.display.isMobile ? import("../components/Layout/mLayout.vue") : import("../components/Layout/layout.vue"),
         children: [
             {
                 path: "",
                 name: "home",
-                component: home
+                component: () => store.state.display.isMobile ? import("../components/home/mHome.vue") : import("../components/home/home.vue")
             },
             {
                 path: "design-detail",
                 name: "mission",
-                component: mission
+                component: () => store.state.display.isMobile ? import("../components/mission/mMission.vue") : import("../components/mission/mission.vue")
             },
             {
                 path: "development-history",
                 name: "development",
-                component: development
+                component: () => store.state.display.isMobile ? import("../components/development/mDevelopment.vue") : import("../components/development/development.vue")
             },
             {
                 path: "about",
                 name: "about",
-                component: about
+                component: () => store.state.display.isMobile ? import("../components/about/mAbout.vue") : import("../components/about/about.vue")
             }
         ]
     }
