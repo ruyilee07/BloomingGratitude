@@ -1,10 +1,4 @@
 <script setup>
-import { ref } from 'vue';
-import router from '../../router/router';
-
-function handleToAppPage() {
-
-} 
 </script>
 
 <template>
@@ -22,7 +16,8 @@ function handleToAppPage() {
                             <div class="slogan">Plant the Seeds of Gratitude,<br />Watch Joy Bloom.</div>
                             <div class="subtitle">Transform your daily thankfulness into vibrant, personalized art.
                             </div>
-                            <n-button type="primary" round class="startBtn" @click="handleToAppPage">
+                            <n-button type="primary" round class="startBtn" tag="a" target="_blank"
+                                href="https://apps.apple.com/us/app/blooming-gratitude/id6741553160">
                                 Download Here
                             </n-button>
                         </div>

@@ -1,10 +1,6 @@
 <script setup>
 import { ref } from 'vue';
 import router from '../../router/router';
-
-function handleToAppPage() {
-
-} 
 </script>
 
 <template>
@@ -24,7 +20,8 @@ function handleToAppPage() {
                             </div>
                         </div>
                         <div>
-                            <n-button type="primary" round class="startBtn" @click="handleToAppPage">
+                            <n-button type="primary" round class="startBtn" tag="a" target="_blank"
+                                href="https://apps.apple.com/us/app/blooming-gratitude/id6741553160">
                                 Download Here
                             </n-button>
                         </div>
