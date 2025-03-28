@@ -24,14 +24,6 @@ onMounted(() => {
         <n-flex class="block1" :align="'center'">
             <div class="block1__inner">
                 <div>
-                    <div class="slogan">
-                        <b>{{ "Rediscover our life's".toUpperCase() }}
-                            <span style="color: var(--primary-color)">MEANING</span>
-                            {{ "through daily gratitude".toUpperCase() }}
-                        </b>
-                    </div>
-                </div>
-                <div>
                     <h2>Why did I make this?</h2>
                     <p>In our hectic, modern lives, it’s all too easy to be overwhelmed by stress, negativity, and the
                         constant demands of the world around us. Many people find themselves caught in a cycle of
@@ -131,10 +123,7 @@ onMounted(() => {
     padding: 24px;
 
     .block1 {
-        min-height: calc(100vh - 87px - 48px);
-
         .block1__inner {
-            align-items: center;
 
             .slogan {
                 font-size: 48px;

@@ -22,16 +22,8 @@ onMounted(() => {
 <template>
     <div class="content">
         <n-flex class="block1" :align="'center'">
-            <n-grid class="block1__inner">
-                <n-gi :span="12">
-                    <div class="slogan">
-                        <b>{{ "Rediscover our life's".toUpperCase() }}
-                            <span style="color: var(--primary-color)">MEANING</span>
-                            {{ "through daily gratitude".toUpperCase() }}
-                        </b>
-                    </div>
-                </n-gi>
-                <n-gi :span="10" :offset="2">
+            <div class="block1__inner">
+                <div>
                     <h2>Why did I make this?</h2>
                     <p>In our hectic, modern lives, it’s all too easy to be overwhelmed by stress, negativity, and the
                         constant demands of the world around us. Many people find themselves caught in a cycle of
@@ -49,8 +41,8 @@ onMounted(() => {
                     <n-button style="margin-top: 12px" type="primary" round @click="scrollToBottom(block2)">
                         Scroll Down
                     </n-button>
-                </n-gi>
-            </n-grid>
+                </div>
+            </div>
         </n-flex>
         <div ref="block2">
             <n-flex class="block2" :align="'center'">
