@@ -28,6 +28,12 @@ const routes = [
                 component: () => store.state.display.isMobile ? import("../components/about/mAbout.vue") : import("../components/about/about.vue")
             }
         ]
+    },
+    {
+        path: "/app/:gratitudeID",
+        name: "app-share",
+        component: () => import("../components/share/share.vue"),
+        props: true
     }
 ];
 
