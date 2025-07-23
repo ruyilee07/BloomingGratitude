@@ -9,6 +9,8 @@ const { lang } = useLocale()
 
 const T = ref(null)
 
+const readyRender = ref(false)
+
 const opened = ref(false)
 
 const showTip = ref(true)
@@ -24,6 +26,13 @@ onBeforeMount(async () => {
         console.log(T.value)
         const buffer = await axios.get(`http://localhost:5174/api/ruyi/plant/${gratitudeID}`)
         gratitude.value = buffer.data
+        const plainText = await decryptJS({
+            ciphertext: gratitude.value.content,
+            nonce: gratitude.value.nonce,
+            tag: gratitude.value.tag
+        })
+        gratitude.value.content = plainText
+        readyRender.value = true;
     } catch (e) {
         console.log(e)
     }
@@ -38,7 +47,7 @@ function handleOpenMail() {
 </script>
 
 <template>
-    <div v-if="T" class="share-container">
+    <div v-if="readyRender" class="share-container">
         <transition>
             <div v-if="!opened" @click="handleOpenMail" class="letter-image">
                 <div class="animated-mail">
@@ -74,10 +83,7 @@ function handleOpenMail() {
                                 <n-time :time="new Date(gratitude.createdAt)" :formmat="'MMM:d:YYYY'"></n-time>
                             </n-text>
                             <div>
-                                <div>{{ decryptJS({
-                                    ciphertext: gratitude.content, nonce: gratitude.nonce, tag:
-                                        gratitude.tag
-                                }) }}</div>
+                                <div>{{ gratitude.content }}</div>
                             </div>
                         </n-flex>
                     </n-flex>
