@@ -71,9 +71,9 @@ function handleOpenMail() {
                 </transition>
             </div>
             <div v-else class="letter-content">
+                <!--  特效 - 彩带 - 闪烁 -->
                 <div class="inner">
                     <n-flex vertical :size="48">
-                        <!-- <div class="title"><b>这是一封包含感激之情的信</b></div> -->
                         <n-flex vertical>
                             <div class="img-wrapper">
                                 <n-image :src="gratitude.imgUrl"></n-image>
@@ -83,11 +83,22 @@ function handleOpenMail() {
                                 <n-time :time="new Date(gratitude.createdAt)" :formmat="'MMM:d:YYYY'"></n-time>
                             </n-text>
                             <div>
-                                <div>{{ gratitude.content }}</div>
+                                <div style="font-size: 1.2rem">{{ gratitude.content }}</div>
                             </div>
                         </n-flex>
                     </n-flex>
                 </div>
+            </div>
+        </transition>
+        <transition>
+            <div v-if="opened" class="download">
+                <n-flex :align="'center'">
+                    <img style="width: 2.8rem" src="/public/BloomingGratitude/logo/apple-touch-icon.png" />
+                    <n-flex vertical :size="2">
+                        <div>{{ T.App_Name }}</div>
+                        <n-text :depth="3">Click to download</n-text>
+                    </n-flex>
+                </n-flex>
             </div>
         </transition>
     </div>
@@ -95,6 +106,7 @@ function handleOpenMail() {
 
 <style lang='less' scoped>
 .share-container {
+    position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -102,6 +114,8 @@ function handleOpenMail() {
     background: #F9F6F1;
 
     .letter-content {
+        position: relative;
+
         .image-wrapper {
             width: 100%;
             aspect-ratio: 1/1;
@@ -124,9 +138,22 @@ function handleOpenMail() {
             padding: 2rem;
 
             .title {
-                font-size: 2rem;
+                font-size: 1.6rem;
                 font-weight: bold;
             }
+        }
+    }
+
+    .download {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        padding: 0.5rem;
+        box-shadow: var(--boxShadow-light);
+        border-radius: 8px;
+
+        img {
+            border-radius: 8px;
         }
     }
 }
@@ -251,8 +278,11 @@ function handleOpenMail() {
 }
 
 .shadow {
+    font-family: "Dancing Script", cursive;
+    font-size: 1.7rem;
+    color: #fff;
     position: absolute;
-    top: 200px;
+    top: 85px;
     left: 50%;
     width: 400px;
     height: 30px;
@@ -263,6 +293,7 @@ function handleOpenMail() {
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
+    z-index: 999;
 }
 
 .letter-image:hover {
