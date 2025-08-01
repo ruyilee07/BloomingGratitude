@@ -24,7 +24,7 @@ onBeforeMount(async () => {
         T.value = TBuffer.data
         console.log(`${import.meta.env.BASE_URL}${lang.value}.json`)
         console.log(T.value)
-        const buffer = await axios.get(`http://localhost:5174/api/ruyi/plant/${gratitudeID}`)
+        const buffer = await axios.get(`https://hillib.scholarhills.com/api/ruyi/plant/${gratitudeID}`)
         gratitude.value = buffer.data
         const plainText = await decryptJS({
             ciphertext: gratitude.value.content,
@@ -43,6 +43,10 @@ function handleOpenMail() {
     setTimeout(() => {
         opened.value = true;
     }, 1000);
+}
+
+function handleDownload() {
+    window.open("https://apps.apple.com/us/app/blooming-gratitude/id6741553160");
 }
 </script>
 
@@ -91,9 +95,9 @@ function handleOpenMail() {
             </div>
         </transition>
         <transition>
-            <div v-if="opened" class="download">
+            <div v-if="opened" class="download" @click="handleDownload">
                 <n-flex :align="'center'">
-                    <img style="width: 2.8rem" src="/public/BloomingGratitude/logo/apple-touch-icon.png" />
+                    <img style="width: 2.8rem" src="/apple-touch-icon.png" />
                     <n-flex vertical :size="2">
                         <div>{{ T.App_Name }}</div>
                         <n-text :depth="3">Click to download</n-text>
