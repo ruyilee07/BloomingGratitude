@@ -4,6 +4,7 @@ import axios from 'axios';
 import router from '../../router/router';
 import { useLocale } from './lang'
 import { decryptJS } from './crypto';
+import confetti from "https://cdn.skypack.dev/canvas-confetti";
 
 const { lang } = useLocale()
 
@@ -42,6 +43,7 @@ function handleOpenMail() {
     showTip.value = false
     setTimeout(() => {
         opened.value = true;
+        confetti();
     }, 1000);
 }
 
@@ -112,9 +114,10 @@ function handleDownload() {
 .share-container {
     position: relative;
     height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
     background: #F9F6F1;
 
     .letter-content {
@@ -155,6 +158,7 @@ function handleDownload() {
         padding: 0.5rem;
         box-shadow: var(--boxShadow-light);
         border-radius: 8px;
+        cursor: pointer;
 
         img {
             border-radius: 8px;
